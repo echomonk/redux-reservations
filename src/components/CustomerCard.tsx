@@ -33,8 +33,12 @@ export const CustomerCard = ({ id, name, food }: CustomerCardTypes) => {
             className="customer-food"
             style={{ cursor: "pointer" }}
           >
-            {food.map((food) => {
-              return <p>{food}</p>;
+            {food.map((food, i) => {
+              return (
+                <div key={i}>
+                  <p>{food}</p>
+                </div>
+              );
             })}
           </div>
           <div className="customer-food-input-container">

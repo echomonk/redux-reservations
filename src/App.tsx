@@ -31,7 +31,11 @@ function App() {
             <h5 className="reservation-header">Reservations</h5>
             <div className="reservation-cards-container">
               {reservations.map((name, index) => {
-                return <ReservationCard name={name} index={index} />;
+                return (
+                  <div key={index}>
+                    <ReservationCard name={name} index={index} />
+                  </div>
+                );
               })}
             </div>
           </div>
@@ -47,6 +51,7 @@ function App() {
           {customers.map((customer) => {
             return (
               <CustomerCard
+                key={customer.id}
                 id={customer.id}
                 name={customer.name}
                 food={customer.food}
